@@ -1,0 +1,56 @@
+body {
+    display:flex;
+    flex-direction: column;
+    background: url("background.jpg") bottom center;
+    background-size: cover;   
+    min-height:100vh;
+    justify-content:center;
+    font-family: sans-serif;
+    background: url("background.jpg") bottom center;
+    background-size: cover;     
+}
+
+main {
+    display: flex;
+    flex:1;
+    justify-content:center;
+    align-items: center;
+
+}
+
+.container {
+    margin: 5px 15px;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-direction: column;
+    border: 3px solid black;
+    padding: 1rem .5rem;
+    background-color:rgba(0, 0, 0, 0.6);
+    font-size: 1.5rem;
+    flex-basis: 10rem; 
+    /* use this if we use transitionEnd event instead of keyUp in js
+    transition: all 0.05s ease; 
+    */
+
+}
+
+.container.onbeat{
+    border: 3px solid #ffc600;
+    box-shadow: 0 0 1rem #ffc600;
+    transform: scale(1.1);
+}
+
+
+.sound {
+    display:block;
+    font-size: 10px;
+    color:#d4af37
+}
+
+.letter {
+    font-size: 20px;
+    color: white;
+}
+
+
