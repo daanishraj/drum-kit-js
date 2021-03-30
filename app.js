@@ -16,10 +16,13 @@ function keyToBeat(event) {
     let letter = event.code.slice(-1).toUpperCase()
     if (keyToBeatMap.has(letter)) {
         containerClasses = document.getElementById(letter).classList
-        let sound = keyToBeatMap.get(letter)
+        let sound = keyToBeatMap.get(letter).toLowerCase()
         if (event.type === "keydown") {
             containerClasses.add('onbeat')
             beat = new Audio(`sounds/${sound}.wav`)
+            console.log(sound)
+            console.log(beat)
+
             // beat.play()
             play(beat)
         } else if (event.type === "keyup") {
