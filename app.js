@@ -20,9 +20,26 @@ function keyToBeat(event) {
         if (event.type === "keydown") {
             containerClasses.add('onbeat')
             beat = new Audio(`sounds/${sound}.wav`)
-            beat.play()
+            // beat.play()
+            play(beat)
         } else if (event.type === "keyup") {
             containerClasses.remove('onbeat')
         }
+    }
+}
+
+function play(audioFile) {
+    var playPromise = audioFile.play();
+
+    // In browsers that don’t yet support this functionality,
+    // playPromise won’t be defined.
+    if (playPromise !== undefined) {
+    playPromise.then(function() {
+        // Automatic playback started!
+        console.log("It's playing!...")
+    }).catch(function(error) {
+        // Automatic playback failed.
+        console.log("Playback failed")
+    });
     }
 }
